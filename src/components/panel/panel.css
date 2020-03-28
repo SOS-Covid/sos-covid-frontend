@@ -1,0 +1,62 @@
+#root {
+  display: flex;
+  flex: 1;
+}
+html,
+body {
+  display: flex;
+  flex: 1;
+  background-image: url('../../assets/images/saturn.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  /* font-size: 1.1em; */
+  border: 0px dashed #000;
+  color: #666;
+  justify-content: center;
+  /* border: 2px dashed #900; */
+
+}
+
+
+.App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+  pointer-events: none;
+  justify-content: center;
+  /* border: 1px dashed #000; */
+  text-align: center;
+  /* height: 60vmin;
+  width: 60vmin; */
+  pointer-events: none;
+  /* background: rgba(0, 0, 0, 0.9); */
+  border-radius: 50%;
+
+}
+
+.React {
+  animation: React infinite 20s linear;
+  pointer-events: none;
+  justify-content: center;
+  /* border: 1px dashed #000; */
+  text-align: center;
+  /* height: 60vmin;
+  width: 60vmin; */
+  pointer-events: none;
+  /* background: rgba(0, 0, 0, 0.9); */
+  border-radius: 50%;
+
+}
+
+@keyframes React {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
