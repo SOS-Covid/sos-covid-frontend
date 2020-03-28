@@ -1,9 +1,5 @@
-import React, { StrictMode, Fragment } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
+import { Container } from './components'
 
-ReactDOM.render(
-  <StrictMode>
-    <Fragment></Fragment>
-  </StrictMode>,
-  document.getElementById('root')
-)
+ReactDOM.render(<Container />, document.getElementById('root'))
