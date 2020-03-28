@@ -1,6 +1,12 @@
 {
-  "name": "sos-covid-frontend",
+  "name": "sos-covid",
   "version": "0.1.0",
+  "contributors": [
+    {
+      "name": "Lucas Rafael Gonçalves",
+      "email": "lrafaelgoncalves@gmail.com"
+    }
+  ],
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
