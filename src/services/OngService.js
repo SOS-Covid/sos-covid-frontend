@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export default class OngService {
-
   static getOngs = async () => {
     let url =
       "https://sos-covid-backend.herokuapp.com/user/find/organization?skip=0&limit=20";
@@ -14,5 +13,5 @@ export default class OngService {
     } finally {
       // this.setState({ loading: false });
     }
-  }
+  };
 }

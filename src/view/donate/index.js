@@ -9,7 +9,6 @@ export default function Donate(props) {
   const getOngs = () => {
     OngService.getOngs()
       .then(response => {
-        console.log("response", response);
         setOngs(response.data);
       })
       .catch(error => {
@@ -26,6 +25,7 @@ export default function Donate(props) {
       <h1>Lista de entidades para ajudar</h1>
       <table>
         <tbody>
+          {error && <h3>Erro ao buscar entidades</h3>}
           {ongs.map((ong, index) => {
             return (
               <tr key={index}>
