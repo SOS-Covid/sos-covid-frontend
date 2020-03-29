@@ -1,6 +1,6 @@
 import {axiosInstance} from '../../api'
 
-export const auth = (data) => axiosInstance.post('/test', data)
+export const auth = (data) => axiosInstance.post('/session', data)
 
 
 
