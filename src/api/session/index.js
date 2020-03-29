@@ -1,3 +1,7 @@
-import { axiosInstance } from '../'
+import {axiosInstance} from '../../api'
 
-export const createSession = () => axiosInstance.get('/url')
+export const auth = (data) => axiosInstance.post('/test', data)
+
+
+
+
