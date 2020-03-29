@@ -1,8 +1,12 @@
-import { Home } from '../view'
+import { Home, Donate } from "../view";
 
 export default {
   home: {
-    path: '/',
+    path: "/",
     component: Home
+  },
+  donate: {
+    path: "/quero-doar",
+    component: Donate
   }
-}
+};
