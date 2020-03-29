@@ -1,84 +1,89 @@
-import React from "react"
+import React, { useEffect, useState } from "react";
+
+import { Accordion, Container, Col, Row, Card, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import OngService from "../../services/OngService";
 
 export default function Home(props) {
+  const [ongs, setOngs] = useState([]);
+  const [error, setError] = useState(false);
+
+  const getOngs = () => {
+    OngService.getOngs()
+      .then(response => {
+        setOngs(response.data);
+      })
+      .catch(error => {
+        setError(true);
+      });
+  };
+
+  useEffect(() => {
+    getOngs();
+  }, []);
+
   return (
     <section className="home">
-      <header>
+      <header className="text-center">
         <img src="https://fakeimg.pl/350x200/?text=Logo" alt="logo" />
-        <a href="/">Indicar uma ONG</a>
       </header>
       <section className="intro">
-        <h1>Propósito de estarmos aqui é este em 3 linhas mobile</h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
-        </p>
-        <button>Quero doar</button>
+        <Container fluid>
+          <Row>
+            <Col>
+              <h1>CONECTANDO DOADORES AOS QUE MAIS PRECISAM</h1>
+              <p>
+                Olá doador, que bom que você está aqui! <br />
+                <br />
+                Muitas pessoas e famílias inteiras estão passando por
+                dificuldades com as restrições impostas pela pandemia do
+                COVID-19. O isolamento social é necessário, mas com isso os
+                empregos e atividades autônomas e informais são afetados,
+                fazendo com que muitas pessoas sejam impossibilitadas de ganhar
+                o próprio sustento. Isso restringe seu acesso ao que há de mais
+                básico, alimentação e itens higiene. <br />
+                <br />
+                Neste local organizamos as iniciativas que estão ocorrendo para
+                ajudá-lo a doar para quem mais necessita.
+              </p>
+            </Col>
+          </Row>
+        </Container>
       </section>
       <section className="donate">
-        <img src="https://fakeimg.pl/350x350/" alt="donate" />
-        <h3>Somos apoiado por </h3>
-        <img src="https://fakeimg.pl/200x200/" alt="donate" />
-        <img src="https://fakeimg.pl/200x200/" alt="donate" />
-        <img src="https://fakeimg.pl/200x200/" alt="donate" />
-      </section>
-      <section className="help">
-        <h3>Ajude quem mais precisa</h3>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
-        </p>
-        <img src="https://fakeimg.pl/350x350/" alt="help" />
-      </section>
-      <section className="join">
-        <h3>Faça parte de algo maior</h3>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
-        </p>
-        <img src="https://fakeimg.pl/350x350/" alt="help" />
-      </section>
-      <section className="what">
-        <h3>O que é a onda solidária</h3>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
-        </p>
-      </section>
-      <section className="contact">
-        <ul>
-          <li>email</li>
-          <li>Whatsapp</li>
-        </ul>
-      </section>
-      <section className="donation">
-        <h3>Queremos ajudar o próximo</h3>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
-        </p>
-
-        <button>Quero fazer uma doação</button>
+        <h3>Lista de entidades para ajudar</h3>
+        <Accordion defaultActiveKey="0">
+          {error && <h3>Erro ao buscar entidades</h3>}
+          {ongs.map((ong, index) => {
+            return (
+              <Card key={index}>
+                <Card.Header>
+                  <Row>
+                    <Col>
+                      <h5>{ong.name_organization}</h5>
+                      <br /> {ong.address[0].city} - {ong.address[0].district}{" "}
+                    </Col>
+                    <Col>
+                      <Accordion.Toggle
+                        as={Button}
+                        variant="link"
+                        eventKey={index}
+                      >
+                        >
+                      </Accordion.Toggle>
+                    </Col>
+                  </Row>
+                </Card.Header>
+                <Accordion.Collapse eventKey={index}>
+                  <Card.Body>
+                    {ong.description[0]} <br /> Telefone: {ong.phone1}
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            );
+          })}
+        </Accordion>
       </section>
     </section>
   );
