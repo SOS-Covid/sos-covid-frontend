@@ -1,4 +1,5 @@
-import Home from "./home";
-import Donate from "./donate";
+import Home from "./home"
+import Donate from "./donate"
+import Login from "./login"
 
-export { Home, Donate };
+export { Home, Donate, Login }
