@@ -1,0 +1,25 @@
+.Login {
+  padding: 50px 20px;
+  form {
+    height: 100%;
+
+    section {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h1 {
+        color: #293844;
+        align-self: center;
+        font-weight: 400;
+        font-size: 32px;
+      }
+
+      .input-group {
+        .Input:last-child {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
