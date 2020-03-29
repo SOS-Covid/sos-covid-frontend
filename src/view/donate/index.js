@@ -9,7 +9,8 @@ export default function Donate(props) {
   const getOngs = () => {
     OngService.getOngs()
       .then(response => {
-        setOngs([]);
+        console.log("response", response);
+        setOngs(response.data);
       })
       .catch(error => {
         setError(true);
@@ -28,7 +29,7 @@ export default function Donate(props) {
           {ongs.map((ong, index) => {
             return (
               <tr key={index}>
-                <td>{ong.name}</td>
+                <td>{ong.name_organization}</td>
               </tr>
             );
           })}
