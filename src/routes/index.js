@@ -1,7 +1,6 @@
-import { Home, Donate, Login } from "../view";
+import { Home, Donate, Login } from "../view"
 
 export default {
-  
   home: {
     path: "/",
     component: Home
@@ -14,5 +13,4 @@ export default {
     path: "/login",
     component: Login
   }
-
 }

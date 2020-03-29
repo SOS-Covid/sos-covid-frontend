@@ -4,4 +4,4 @@ export const axiosInstance = axios.create({
   baseURL: 'https://sos-covid-backend.herokuapp.com/'
 })
 
-export * from './session'
+export * from './ong'
