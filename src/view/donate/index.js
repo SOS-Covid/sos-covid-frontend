@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import OngService from "../../services/OngService";
+import OngService from '../../services/OngService';
 
-export default function Donate(props) {
+export default function Donate() {
   const [ongs, setOngs] = useState([]);
   const [error, setError] = useState(false);
 
   const getOngs = () => {
     OngService.getOngs()
-      .then(response => {
+      .then((response) => {
         setOngs(response.data);
       })
-      .catch(error => {
+      .catch(() => {
         setError(true);
       });
   };
@@ -26,13 +26,11 @@ export default function Donate(props) {
       <table>
         <tbody>
           {error && <h3>Erro ao buscar entidades</h3>}
-          {ongs.map((ong, index) => {
-            return (
-              <tr key={index}>
-                <td>{ong.name_organization}</td>
-              </tr>
-            );
-          })}
+          {ongs.map((ong, index) => (
+            <tr key={index}>
+              <td>{ong.name_organization}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </section>
