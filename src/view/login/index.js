@@ -1,56 +1,61 @@
-import React from "react"
+import React from 'react';
+import { Link } from 'react-router-dom'
+
 import './style.scss'
 import { auth } from '../../api'
 
-import { Button, Input } from '../../components'
+import { Form, Button } from 'react-bootstrap';
 
-export default function Login(props) {
 
-    const [name, setName] = React.useState('')
-    const [email, setEmail] = React.useState('')
+export default function Login (props) {
 
-    const handleLoginSubmit = async event => {
-        event.preventDefault()
+  const emailRef = React.useRef(null)
+  const passwordRef = React.useRef(null)
 
-        const data = {
-            name,
-            email
-        }
 
-        try {
+  const handleLoginSubmit = async event => {
+    event.preventDefault();
 
-            const res = await auth(data)
-
-            console.log(res)
-
-        } catch (e) {
-            console.error(e)
-        }
+    const data = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value
     }
+    console.log(data);
 
-    return (
-        <div className="Login">
-            <form onSubmit={handleLoginSubmit}>
-                <section>
-                    <h1>Login</h1>
-                    <div className="input-group">
-                        <Input
-                            label="Nome"
-                            value={name}
-                            onChange={({ target }) => setName(target.value)}
-                            required
-                        />
-                        <Input
-                            label="Email"
-                            value={email}
-                            onChange={({ target }) => setEmail(target.value)}
-                            type="email"
-                            required
-                        />
-                    </div>
-                    <Button type="submit">Entrar</Button>
-                </section>
-            </form>
-        </div>
-    )
+    try {
+      const res = await auth(data);
+      console.log(res);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  return (
+    <div className="Login">
+      <div className="login-form">
+        <Form onSubmit={handleLoginSubmit} style={{ width: '18rem' }}>
+          <header className="d-flex align-items-center">
+            <h1>Login</h1>
+            <span className="text-muted">Cadastre-se</span>
+          </header>
+          <Form.Group>
+            <Form.Label>Email</Form.Label>
+            <Form.Control ref={emailRef}
+              size="lg" required type="email"
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Senha</Form.Label>
+            <Form.Control ref={passwordRef} size="lg" required type="password" />
+          </Form.Group>
+          <Button type="submit" size="lg" block>Entrar</Button>
+        </Form>
+      </div>
+      <div className="login-info">
+        <Link to="/">
+          <h1 className="text-white">Cooperação <br /> Solidária</h1>
+        </Link>
+      </div>
+    </div>
+  )
 }
