@@ -1,15 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 
-import './style.scss';
-import { Form, Button } from 'react-bootstrap';
-import { auth } from '../../api';
-
+import { auth } from "../../api";
+import "./style.scss";
 
 export default function Login() {
   const emailRef = React.useRef(null);
   const passwordRef = React.useRef(null);
-
 
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
@@ -31,25 +29,27 @@ export default function Login() {
   return (
     <div className="Login">
       <div className="login-form">
-        <Form onSubmit={handleLoginSubmit} style={{ width: '18rem' }}>
+        <Form onSubmit={handleLoginSubmit} style={{ width: "18rem" }}>
           <header className="d-flex align-items-center">
             <h1>Login</h1>
             <span className="text-muted">Cadastre-se</span>
           </header>
           <Form.Group>
             <Form.Label>Email</Form.Label>
-            <Form.Control
-              ref={emailRef}
-              size="lg"
-              required
-              type="email"
-            />
+            <Form.Control ref={emailRef} size="lg" required type="email" />
           </Form.Group>
           <Form.Group>
             <Form.Label>Senha</Form.Label>
-            <Form.Control ref={passwordRef} size="lg" required type="password" />
+            <Form.Control
+              ref={passwordRef}
+              size="lg"
+              required
+              type="password"
+            />
           </Form.Group>
-          <Button type="submit" size="lg" block>Entrar</Button>
+          <Button type="submit" size="lg" block>
+            Entrar
+          </Button>
         </Form>
       </div>
       <div className="login-info">
@@ -57,7 +57,6 @@ export default function Login() {
           <h1 className="text-white">
             Cooperação
             <br />
-            {' '}
             Solidária
           </h1>
         </Link>

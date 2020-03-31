@@ -1,9 +1,10 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Routes from '../../routes';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Routes from "../../routes";
 
-import './style.scss';
+import "./style.scss";
 
+// eslint-disable-next-line import/prefer-default-export
 export const Container = () => (
   <div className="Container">
     <Router>

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import OngService from '../../services/OngService';
+import OngService from "../../services/OngService";
 
 export default function Donate() {
   const [ongs, setOngs] = useState([]);
@@ -26,8 +26,8 @@ export default function Donate() {
       <table>
         <tbody>
           {error && <h3>Erro ao buscar entidades</h3>}
-          {ongs.map((ong, index) => (
-            <tr key={index}>
+          {ongs.map((ong) => (
+            <tr key={ong.name_organization}>
               <td>{ong.name_organization}</td>
             </tr>
           ))}
