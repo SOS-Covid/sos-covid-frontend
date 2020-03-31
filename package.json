@@ -32,6 +32,11 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -41,7 +46,11 @@
     "lint:fix": "eslint . --fix"
   },
   "eslintConfig": {
-    "extends": ["react-app", "airbnb"],
+    "extends": [
+      "react-app",
+      "airbnb",
+      "plugin:prettier/recommended"
+    ],
     "rules": {
       "react/jsx-filename-extension": [
         "error",
@@ -52,7 +61,21 @@
           ]
         }
       ],
-      "no-console": "off" 
+      "prettier/prettier": [
+        "error",
+        {
+          "printWidth": 80,
+          "trailingComma": "es5",
+          "semi": true,
+          "singleQuote": true
+        }
+      ],
+      "no-console": "off"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "browserslist": {
@@ -68,6 +91,11 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^18.1.0"
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.0",
+    "prettier": "^2.0.2"
   }
 }
