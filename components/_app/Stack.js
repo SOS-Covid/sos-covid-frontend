@@ -1,7 +1,7 @@
 import { Children } from "react";
 import { Box } from "rebass";
 
-const Stack = ({ spacing, as = "div", children, ...props }) => {
+export const Stack = ({ spacing = 4, as = "div", children, ...props }) => {
   const stackItems = Children.toArray(children);
 
   const isList = as === "ol" || as === "ul";
@@ -12,27 +12,12 @@ const Stack = ({ spacing, as = "div", children, ...props }) => {
   }
 
   return (
-    <Box
-      {...props}
-      as={as}
-      sx={{
-        "* + *": {
-          display: "block",
-          marginTop: spacing,
-        },
-      }}
-    >
+    <Box {...props} as={as}>
       {stackItems.map((child, index) => (
-        <Box as={stackItemComponent} mt={index === 0 ? 0 : spacing}>
+        <Box key={index} as={stackItemComponent} mt={index === 0 ? 0 : spacing}>
           {child}
         </Box>
       ))}
     </Box>
   );
 };
-
-Stack.defaultProps = {
-  spacing: 4,
-};
-
-export default Stack;
