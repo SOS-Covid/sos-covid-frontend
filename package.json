@@ -24,6 +24,8 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@reach/skip-nav": "^0.9.0",
     "@rebass/preset": "^4.0.5",
     "axios": "^0.19.2",
     "emotion-theming": "^10.0.27",
@@ -31,6 +33,7 @@
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-feather": "^2.0.3",
     "rebass": "^4.0.7"
   },
   "devDependencies": {

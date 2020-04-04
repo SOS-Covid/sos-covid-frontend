@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Flex, Box, Heading, Link, Button } from "rebass";
-import Container from "./Container";
-import Logo from "./Logo";
+import { Menu } from "react-feather";
+import { Logo } from "./";
 
-const NavBar = () => {
+export const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
 
   const mobileDisplay = expanded ? "flex" : "none";
 
   return (
     <Flex as="header" color="text" bg="background" p={3}>
-      <Container flex={1}>
+      <Box variant="container" flex={1}>
         <Flex alignItems="center" flexDirection={["column", "column", "row"]}>
           <Flex alignItems="center" alignSelf="stretch">
             <Logo size={80} />
@@ -27,18 +27,19 @@ const NavBar = () => {
             <Button
               onClick={() => setExpanded((s) => !s)}
               fontFamily="body"
-              display={["initial", "initial", "none"]}
+              display={["flex", "flex", "none"]}
+              p={2}
             >
-              Menu
+              <Menu />
             </Button>
           </Flex>
           <Box
             as="nav"
             flex={1}
             justifyContent="space-evenly"
-            fontFamily="body"
             display={[mobileDisplay, mobileDisplay, "flex"]}
             flexDirection={["column", "column", "row"]}
+            textAlign="center"
           >
             <Link variant="nav" href="/">
               Início
@@ -54,9 +55,7 @@ const NavBar = () => {
             </Link>
           </Box>
         </Flex>
-      </Container>
+      </Box>
     </Flex>
   );
 };
-
-export default NavBar;
