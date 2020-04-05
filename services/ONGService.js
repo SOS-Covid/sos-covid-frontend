@@ -1,4 +1,4 @@
-import api from "@app/config/api";
+import { api } from "@app/config";
 
 export class ONGService {
   static index(page) {
