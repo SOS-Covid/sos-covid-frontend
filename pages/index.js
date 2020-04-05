@@ -1,6 +1,6 @@
 import { Flex, Box, Heading, Text } from "rebass";
-import { NavBarLayout } from "@app/components/_layouts";
-import { Section, Stack } from "@app/components/_app";
+import { NavBarLayout } from "@app/components/templates";
+import { Section, Stack } from "@app/components/global";
 import { CampaignCard } from "@app/components/campaign";
 import { CampaignsService } from "@app/services";
 

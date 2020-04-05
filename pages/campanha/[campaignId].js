@@ -1,4 +1,4 @@
-import { NavBarLayout } from "@app/components/_layouts";
+import { NavBarLayout } from "@app/components/templates";
 import { CampaignsService } from "@app/services";
 
 export async function getServerSideProps(context) {

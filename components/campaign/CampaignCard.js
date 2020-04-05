@@ -1,5 +1,5 @@
 import { Flex, Heading, Text, Image } from "rebass";
-import { Stack } from "@app/components/_app";
+import { Stack } from "@app/components/global";
 
 export const CampaignCard = ({
   _id,
