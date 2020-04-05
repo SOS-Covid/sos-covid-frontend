@@ -7,8 +7,8 @@ export const Stack = ({ spacing = 4, as = "div", children, ...props }) => {
   const isList = as === "ol" || as === "ul";
   const stackItemComponent = isList ? "li" : "div";
 
-  if (stackItems.length <= 1 && align === "left" && !isList) {
-    return <Fragment>{stackItems}</Fragment>;
+  if (stackItems.length <= 1 && !isList) {
+    return <>{stackItems}</>;
   }
 
   return (

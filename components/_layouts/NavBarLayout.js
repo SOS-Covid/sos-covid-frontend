@@ -1,5 +1,5 @@
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
-import { NavBar } from "../_app";
+import { Footer, NavBar } from "../_app";
 
 export const NavBarLayout = ({ beforeContent, children }) => (
   <>
@@ -7,5 +7,6 @@ export const NavBarLayout = ({ beforeContent, children }) => (
     <NavBar />
     {beforeContent}
     <SkipNavContent>{children}</SkipNavContent>
+    <Footer />
   </>
 );

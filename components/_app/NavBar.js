@@ -48,7 +48,7 @@ export const NavBar = () => {
               Criar campanha
             </Link>
             <Link variant="nav" href="/quero-ajudar">
-              Criar campanha
+              Quero ajudar
             </Link>
             <Link variant="nav" href="/login">
               Login

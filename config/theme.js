@@ -32,14 +32,6 @@ const theme = {
   },
   variants: {
     ...defaultTheme.variants,
-    "full-bleed": {
-      width: "100vw",
-      position: "relative",
-      left: "50%",
-      right: "50%",
-      marginLeft: "-50vw",
-      marginRight: "-50vw",
-    },
     container: {
       maxWidth: "62em",
       mx: "auto",
