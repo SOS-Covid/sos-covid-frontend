@@ -1,7 +1,8 @@
 import { Flex, Heading, Text, Image } from "rebass";
-import { Stack } from "../_app";
+import { Stack } from "@app/components/global";
 
 export const CampaignCard = ({
+  _id,
   campaign_name,
   description,
   assisted_entity,
@@ -10,11 +11,9 @@ export const CampaignCard = ({
 }) => (
   <Stack
     as="a"
-    display="block"
-    p={3}
-    bg="background"
-    sx={{ borderRadius: 4 }}
-    spacing={3}
+    href={`/campanha/${_id}`}
+    variant="card"
+    sx={{ textDecoration: "none", display: "block", color: "text" }}
   >
     <Flex>
       <Flex

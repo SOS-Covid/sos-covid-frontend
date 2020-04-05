@@ -1,5 +1,5 @@
 import { Flex, Link, Text } from "rebass";
-import { Section, Stack } from "./";
+import { Section, Stack } from ".";
 import { Logo } from "./Logo";
 
 const FooterLink = (props) => (

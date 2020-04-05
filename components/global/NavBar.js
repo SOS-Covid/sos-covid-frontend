@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { Flex, Box, Heading, Link, Button } from "rebass";
 import { Menu } from "react-feather";
-import { Logo } from "./";
+import { Logo } from ".";
 
 export const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
-
   const mobileDisplay = expanded ? "flex" : "none";
 
   return (
     <Flex as="header" color="text" bg="background" p={3}>
-      <Box variant="container" flex={1}>
+      <Box variant="containers.base" flex={1}>
         <Flex alignItems="center" flexDirection={["column", "column", "row"]}>
           <Flex alignItems="center" alignSelf="stretch">
             <Logo size={80} />

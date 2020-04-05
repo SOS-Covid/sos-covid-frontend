@@ -1,5 +1,4 @@
-import { api } from "../config/services";
-
+import api from "@app/config/api";
 
 export class ONGService {
   static index(page) {
@@ -8,8 +7,8 @@ export class ONGService {
     return api.get("/organization", {
       params: {
         skip: limit * page,
-        limit
-      }
-    })
+        limit,
+      },
+    });
   }
 }

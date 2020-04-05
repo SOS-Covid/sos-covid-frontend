@@ -18,13 +18,9 @@ const theme = {
     heading: "system-ui, sans-serif",
     monospace: "Menlo, monospace",
   },
-  lineHeight: {
-    heading: 1.5,
-    body: 1.5,
-  },
   text: {
     ...defaultTheme.text,
-    headingHero: {
+    callout: {
       fontSize: 5,
       lineHeight: "body",
       textTransform: "uppercase",
@@ -32,15 +28,17 @@ const theme = {
   },
   variants: {
     ...defaultTheme.variants,
-    container: {
-      maxWidth: "62em",
-      mx: "auto",
-      px: 3,
+    card: {
+      p: 3,
+      bg: "background",
+      borderRadius: "default",
     },
-    "container-xl": {
-      maxWidth: "80em",
-      mx: "auto",
-      px: 3,
+    containers: {
+      base: {
+        maxWidth: "62em",
+        mx: "auto",
+        px: 3,
+      },
     },
   },
 };
