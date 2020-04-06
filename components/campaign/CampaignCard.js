@@ -20,7 +20,7 @@ export const CampaignCard = ({
         width={1 / 3}
         maxWidth={140}
         height={80}
-        bg="muted"
+        bg="muted.base"
         sx={{ borderRadius: 2, backgroundSize: "cover" }}
       />
       <Stack ml={3} spacing={1}>

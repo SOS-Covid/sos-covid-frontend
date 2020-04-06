@@ -6,6 +6,7 @@ const FooterLink = (props) => (
   <Link
     color="accent"
     fontWeight="700"
+    display="block"
     sx={{
       textTransform: "uppercase",
       textDecoration: "none",

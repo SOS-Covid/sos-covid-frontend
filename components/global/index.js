@@ -1,3 +1,4 @@
+export * from "./Divider";
 export * from "./Footer";
 export * from "./Logo";
 export * from "./NavBar";

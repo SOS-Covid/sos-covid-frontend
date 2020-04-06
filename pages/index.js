@@ -17,7 +17,7 @@ export async function getServerSideProps(context) {
 const Home = ({ campaigns }) => (
   <NavBarLayout
     beforeContent={
-      <Section bg="muted" id="chamada">
+      <Section bg="muted.base" id="chamada">
         <Heading as="h2" variant="callout" textAlign="center">
           Colabore com as ações de ajuda que estão ocorrendo em todo o Brasil
         </Heading>
@@ -50,7 +50,7 @@ const Home = ({ campaigns }) => (
         </Text>
       </Stack>
     </Section>
-    <Section id="colabore" bg="muted">
+    <Section id="colabore" bg="muted.base">
       <Stack>
         <Heading as="h2" variant="callout" textAlign="center">
           Campanhas e ações de arrecadação abertas neste momento

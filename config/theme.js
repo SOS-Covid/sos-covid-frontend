@@ -9,6 +9,7 @@ const theme = {
     secondaryHighlight: "#ffa7a7",
     accent: "#ffcc00",
     muted: "#f2f2f2",
+    mutedDarker: "#aDa7b5",
     text: "#404040",
     background: "#ffffff",
   },
@@ -26,12 +27,22 @@ const theme = {
       textTransform: "uppercase",
     },
   },
+  radii: {
+    ...defaultTheme.radii,
+    default: 8,
+  },
   variants: {
     ...defaultTheme.variants,
     card: {
       p: 3,
       bg: "background",
       borderRadius: "default",
+    },
+    flex: {
+      column: {
+        display: "flex",
+        flexDirection: "column",
+      },
     },
     containers: {
       base: {
