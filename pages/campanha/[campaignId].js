@@ -20,8 +20,12 @@ export async function getServerSideProps(context) {
 const Campaign = ({ campaign }) => (
   <NavBarLayout>
     <Box bg="muted" p={4}>
-      <Box bg="background" sx={{ borderRadius: "default", overflow: "hidden" }}>
-        <Stack variant="containers.base" p={4} spacing={3}>
+      <Box
+        bg="background"
+        sx={{ borderRadius: "default", overflow: "hidden" }}
+        variant="containers.base"
+      >
+        <Stack p={4} spacing={3}>
           <Heading as="h2">{campaign.campaign_name}</Heading>
           <Flex flexWrap="wrap">
             <Stack
