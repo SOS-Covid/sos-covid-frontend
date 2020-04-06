@@ -1,7 +1,7 @@
+import Head from "next/head";
 import { ThemeProvider } from "emotion-theming";
 import { Global } from "@emotion/core";
-import Head from "next/head";
-import theme from "@app/config/theme";
+import { theme } from "@app/config";
 
 // Resets CSS styles
 import "modern-css-reset";
