@@ -1,1 +1,1 @@
-export * from "./NavBarLayout";
+export * from './NavBarLayout'

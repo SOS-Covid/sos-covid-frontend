@@ -1,17 +1,18 @@
-import { Flex, Box, Heading, Text } from "rebass";
-import { NavBarLayout } from "@app/components/templates";
-import { Section, Stack } from "@app/components/global";
-import { CampaignCard } from "@app/components/campaign";
-import { CampaignsService } from "@app/services";
+import React from 'react'
+import { Flex, Box, Heading, Text } from 'rebass'
+import { NavBarLayout } from '@app/components/templates'
+import { Section, Stack } from '@app/components/global'
+import { CampaignCard } from '@app/components/campaign'
+import { CampaignsService } from '@app/services'
 
 export async function getServerSideProps(context) {
-  const campaigns = await CampaignsService.findPerPage({ limit: 10 });
+  const campaigns = await CampaignsService.findPerPage({ limit: 10 })
 
   return {
     props: {
-      campaigns,
-    },
-  };
+      campaigns
+    }
+  }
 }
 
 const Home = ({ campaigns }) => (
@@ -46,7 +47,7 @@ const Home = ({ campaigns }) => (
 
         <Text as="p">
           Este é um movimento de pessoas para pessoas! <br />
-          Colabore e nos ajude a potencializar essa causa do bem {"<3"}
+          Colabore e nos ajude a potencializar essa causa do bem {'<3'}
         </Text>
       </Stack>
     </Section>
@@ -65,6 +66,6 @@ const Home = ({ campaigns }) => (
       </Stack>
     </Section>
   </NavBarLayout>
-);
+)
 
-export default Home;
+export default Home

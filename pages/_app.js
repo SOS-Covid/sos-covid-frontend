@@ -1,13 +1,14 @@
-import Head from "next/head";
-import { ThemeProvider } from "emotion-theming";
-import { Global } from "@emotion/core";
-import { theme } from "@app/config";
+import React from 'react'
+import Head from 'next/head'
+import { ThemeProvider } from 'emotion-theming'
+import { Global } from '@emotion/core'
+import { theme } from '@app/config'
 
 // Resets CSS styles
-import "modern-css-reset";
+import 'modern-css-reset'
 
 // Import Reach-UI styles
-import "@reach/skip-nav/styles.css";
+import '@reach/skip-nav/styles.css'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,13 +21,13 @@ function MyApp({ Component, pageProps }) {
           body: {
             color: theme.colors.text,
             backgroundColor: theme.colors.background,
-            fontFamily: theme.fonts.body,
-          },
+            fontFamily: theme.fonts.body
+          }
         }}
       />
       <Component {...pageProps} />
     </ThemeProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

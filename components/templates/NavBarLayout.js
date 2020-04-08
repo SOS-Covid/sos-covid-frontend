@@ -1,5 +1,6 @@
-import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
-import { Footer, NavBar } from "@app/components/global";
+import React from 'react'
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
+import { Footer, NavBar } from '@app/components/global'
 
 export const NavBarLayout = ({ beforeContent, children }) => (
   <>
@@ -9,4 +10,4 @@ export const NavBarLayout = ({ beforeContent, children }) => (
     <SkipNavContent>{children}</SkipNavContent>
     <Footer />
   </>
-);
+)

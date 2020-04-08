@@ -1,20 +1,21 @@
-import { NavBarLayout } from "@app/components/templates";
-import { CampaignsService } from "@app/services";
-import { Paragraph } from "@app/components/typography";
-import { Heading, Flex, Box, Text } from "rebass";
-import { Stack, Divider } from "@app/components/global";
+import React from 'react'
+import { NavBarLayout } from '@app/components/templates'
+import { CampaignsService } from '@app/services'
+import { Paragraph } from '@app/components/typography'
+import { Heading, Flex, Box, Text } from 'rebass'
+import { Stack, Divider } from '@app/components/global'
 
 export async function getServerSideProps(context) {
-  const { campaignId } = context.params;
-  const campaign = await CampaignsService.findById({ campaignId });
+  const { campaignId } = context.params
+  const campaign = await CampaignsService.findById({ campaignId })
 
-  console.log(campaign);
+  console.log(campaign)
 
   return {
     props: {
-      campaign,
-    },
-  };
+      campaign
+    }
+  }
 }
 
 const Campaign = ({ campaign }) => (
@@ -22,7 +23,7 @@ const Campaign = ({ campaign }) => (
     <Box bg="muted" p={4}>
       <Box
         bg="background"
-        sx={{ borderRadius: "default", overflow: "hidden" }}
+        sx={{ borderRadius: 'default', overflow: 'hidden' }}
         variant="containers.base"
       >
         <Stack p={4} spacing={3}>
@@ -48,7 +49,7 @@ const Campaign = ({ campaign }) => (
                 as="h2"
                 fontWeight="700"
                 fontSize={3}
-                sx={{ textTransform: "uppercase" }}
+                sx={{ textTransform: 'uppercase' }}
               >
                 Ajudar com dinheiro
               </Heading>
@@ -65,7 +66,7 @@ const Campaign = ({ campaign }) => (
           </Flex>
         </Stack>
         <Stack
-          sx={{ borderTop: "1px solid", borderTopColor: "muted" }}
+          sx={{ borderTop: '1px solid', borderTopColor: 'muted' }}
           p={4}
           spacing={3}
         >
@@ -73,7 +74,7 @@ const Campaign = ({ campaign }) => (
             as="h2"
             fontWeight="700"
             fontSize={3}
-            sx={{ textTransform: "uppercase" }}
+            sx={{ textTransform: 'uppercase' }}
           >
             Ajudar com produtos
           </Heading>
@@ -86,8 +87,8 @@ const Campaign = ({ campaign }) => (
               border: 0,
               borderTopWidth: 20,
               borderBottomWidth: 20,
-              borderStyle: "solid",
-              borderColor: "mutedDarker",
+              borderStyle: 'solid',
+              borderColor: 'mutedDarker'
             }}
           >
             {campaign.type_donations.map((donation) => (
@@ -100,7 +101,7 @@ const Campaign = ({ campaign }) => (
           </Flex>
         </Stack>
         <Stack
-          sx={{ borderTop: "1px solid", borderTopColor: "muted" }}
+          sx={{ borderTop: '1px solid', borderTopColor: 'muted' }}
           p={4}
           spacing={3}
         >
@@ -108,7 +109,7 @@ const Campaign = ({ campaign }) => (
             as="h2"
             fontWeight="700"
             fontSize={3}
-            sx={{ textTransform: "uppercase" }}
+            sx={{ textTransform: 'uppercase' }}
           >
             Pontos de Coleta
           </Heading>
@@ -117,6 +118,6 @@ const Campaign = ({ campaign }) => (
       </Box>
     </Box>
   </NavBarLayout>
-);
+)
 
-export default Campaign;
+export default Campaign

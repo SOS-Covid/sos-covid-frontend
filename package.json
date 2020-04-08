@@ -16,13 +16,6 @@
     }
   ],
   "private": true,
-  "scripts": {
-    "dev": "next",
-    "start": "next start",
-    "build": "next build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@reach/skip-nav": "^0.9.0",
@@ -37,16 +30,25 @@
     "rebass": "^4.0.7"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "eslint-config-airbnb": "^18.1.0",
+    "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react-app": "^6.2.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.0",
     "prettier": "^2.0.2"
   },
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
   "lint-staged": {
-    "*.+(js|jsx)": [
+    "*.js": [
       "eslint --fix",
       "git add"
     ],
@@ -54,25 +56,6 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "airbnb",
-      "plugin:prettier/recommended"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "printWidth": 80,
-          "trailingComma": "es5",
-          "semi": true,
-          "singleQuote": true
-        }
-      ],
-      "no-console": "off"
-    }
   },
   "husky": {
     "hooks": {

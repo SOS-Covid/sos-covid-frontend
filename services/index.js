@@ -1,2 +1,2 @@
-export * from "./ONGService";
-export * from "./CampaignsService";
+export * from './ONGService'
+export * from './CampaignsService'

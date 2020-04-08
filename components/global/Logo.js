@@ -1,5 +1,6 @@
-import { Image } from "rebass";
+import React from 'react'
+import { Image } from 'rebass'
 
 export const Logo = ({ ...props }) => (
   <Image {...props} src="/img/logo.png" alt="logo" />
-);
+)

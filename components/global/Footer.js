@@ -1,6 +1,7 @@
-import { Flex, Link, Text } from "rebass";
-import { Section, Stack } from ".";
-import { Logo } from "./Logo";
+import React from 'react'
+import { Flex, Link, Text } from 'rebass'
+import { Section, Stack } from '.'
+import { Logo } from './Logo'
 
 const FooterLink = (props) => (
   <Link
@@ -8,13 +9,13 @@ const FooterLink = (props) => (
     fontWeight="700"
     display="block"
     sx={{
-      textTransform: "uppercase",
-      textDecoration: "none",
-      letterSpacing: 1.15,
+      textTransform: 'uppercase',
+      textDecoration: 'none',
+      letterSpacing: 1.15
     }}
     {...props}
   />
-);
+)
 
 export const Footer = () => (
   <Section as="footer" id="rodape" bg="text" color="accent">
@@ -35,4 +36,4 @@ export const Footer = () => (
       </Flex>
     </Flex>
   </Section>
-);
+)
