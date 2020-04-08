@@ -11,7 +11,6 @@ export const Stack = ({ spacing = 4, splitAfter, children, ...props }) => {
 
         if (index === 0) mt = 0
         if (index === splitAfter) mt = 'auto'
-        console.log(mt)
         return React.cloneElement(child, { mt })
       })}
     </Flex>

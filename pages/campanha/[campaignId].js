@@ -9,8 +9,6 @@ export async function getServerSideProps(context) {
   const { campaignId } = context.params
   const campaign = await CampaignsService.findById({ campaignId })
 
-  console.log(campaign)
-
   return {
     props: {
       campaign
