@@ -41,11 +41,11 @@
     "prettier": "^2.0.2"
   },
   "scripts": {
-    "dev": "next",
-    "start": "next start",
-    "build": "next build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "dev": "next ./src",
+    "start": "next start ./src",
+    "build": "next build ./src",
+    "lint": "eslint ./src/**",
+    "lint:fix": "eslint ./src --fix"
   },
   "lint-staged": {
     "*.js": [
